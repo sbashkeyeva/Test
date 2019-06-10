@@ -21,14 +21,8 @@ class VC: UIViewController {
         
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         collectionView.setCollectionViewLayout(layout, animated: true)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(Bullet.self, forCellWithReuseIdentifier: bullet)
-        collectionView.backgroundColor = UIColor.purple
         view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MyCell.self, forCellReuseIdentifier: cellIdentifier)
+        addSubviews()
         let tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
         tableView.tableHeaderView = tableHeaderView
         tableView.tableHeaderView?.addSubview(collectionView)
@@ -40,15 +34,20 @@ class VC: UIViewController {
             collectionView.rightAnchor.constraint(equalTo: tableHeaderView.rightAnchor, constant: -10),
         ]
         NSLayoutConstraint.activate(collectionContraints)
-        view.layoutIfNeeded()
-        let flowLayout=UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width-60.0, height: collectionView.frame.size.height-20.0)
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: 190)
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 500, right: 5)
-        flowLayout.minimumInteritemSpacing = 5.0
-        collectionView.collectionViewLayout=flowLayout
+        addConstraints()
+        stylized()
+    }
+    func addSubviews(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(Bullet.self, forCellWithReuseIdentifier: bullet)
+        collectionView.backgroundColor = UIColor.purple
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(MyCell.self, forCellReuseIdentifier: cellIdentifier)
+    }
+    func addConstraints(){
         var constraints = [NSLayoutConstraint]()
         constraints += [
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
@@ -60,6 +59,16 @@ class VC: UIViewController {
         NSLayoutConstraint.activate(constraints)
         tableView.translatesAutoresizingMaskIntoConstraints=false
         collectionView.translatesAutoresizingMaskIntoConstraints=false
+    }
+    func stylized(){
+        view.layoutIfNeeded()
+        let flowLayout=UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width-60.0, height: collectionView.frame.size.height-20.0)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: 190)
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 500, right: 5)
+        flowLayout.minimumInteritemSpacing = 5.0
+        collectionView.collectionViewLayout=flowLayout
         
     }
 }
@@ -156,60 +165,4 @@ class Bullet:UICollectionViewCell{
 
 
 
-
-
-
-//class CustomCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout  {
-//    let customCellIdentifier="customCellIdentifier"
-//    let names = ["Bil Gates","Steve Jobs","Mark Zucherberg","Test","Zhizn'","klass"]
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        collectionView.backgroundColor=UIColor.white
-//        collectionView.contentSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: 190)
-//        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: customCellIdentifier )
-//        let flowLayout=UICollectionViewFlowLayout()
-//        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width-60.0, height: collectionView.frame.size.height-20.0)
-//        flowLayout.scrollDirection = .horizontal
-//        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: 190)
-//        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 500, right: 5)
-//        flowLayout.minimumInteritemSpacing = 5.0
-//        collectionView.collectionViewLayout=flowLayout
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: view.frame.width, height: 200)
-//    }
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let customCell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! CustomCell
-//        customCell.nameLabel.text=names[indexPath.item ]
-//        return customCell
-//    }
-//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return names.count
-//    }
-//}
-//
-//class CustomCell: UICollectionViewCell{
-//    override init(frame: CGRect) {
-//        super.init(frame:frame )
-//        setupViews()
-//    }
-//    let nameLabel:UILabel = {
-//        let label = UILabel()
-//        label.text = "Custom Text"
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
-//    func setupViews(){
-//        backgroundColor=UIColor.red
-//        addSubview(nameLabel)
-//        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
-//        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0" : nameLabel]))
-//
-//    }
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//}
 
