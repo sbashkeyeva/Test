@@ -34,8 +34,10 @@ class VC: UIViewController {
             collectionView.rightAnchor.constraint(equalTo: tableHeaderView.rightAnchor, constant: -10),
         ]
         NSLayoutConstraint.activate(collectionContraints)
-        addConstraints()
         stylized()
+        addConstraints()
+        
+       
     }
     func addSubviews(){
         collectionView.delegate = self
@@ -65,8 +67,8 @@ class VC: UIViewController {
         let flowLayout=UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width-60.0, height: collectionView.frame.size.height-20.0)
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: 190)
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 500, right: 5)
+//        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 10, height: 190)
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         flowLayout.minimumInteritemSpacing = 5.0
         collectionView.collectionViewLayout=flowLayout
         
@@ -114,9 +116,9 @@ class MyCell:UITableViewCell {
 
 extension VC: UICollectionViewDelegate, UICollectionViewDataSource{
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return names.count
