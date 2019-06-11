@@ -81,7 +81,7 @@ class VC: UIViewController {
         collectionView.collectionViewLayout=flowLayout
         collectionView.backgroundColor = .green
         collectionView.isPagingEnabled = true
-        tableView.rowHeight = 80
+        tableView.rowHeight = 150
         tableView.estimatedRowHeight = 80
     }
 }
@@ -111,7 +111,7 @@ extension VC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bullet, for: indexPath) as! Bullet
-        cell.textLabel.text = names[indexPath.row]
+//        cell.textLabel.text = names[indexPath.row]
 
         return cell
     }

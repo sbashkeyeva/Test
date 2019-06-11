@@ -18,7 +18,12 @@ class Bullet:UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
-    let textLabel = UILabel()
+    let textLabel:UILabel={
+        let label=UILabel()
+        label.font=UIFont.systemFont(ofSize: 17)
+        label.text="000007654"
+        return label
+    }()
     
     func setupViews(){
         addSubview(textLabel)
@@ -26,10 +31,9 @@ class Bullet:UICollectionViewCell{
         textLabel.translatesAutoresizingMaskIntoConstraints=false
         var constraints=[NSLayoutConstraint]()
         constraints += [
-            textLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 50),
+            textLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-            textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
-            textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20)
+            textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 50),
             
         ]
         
