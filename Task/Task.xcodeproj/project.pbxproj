@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D347FDAC22AF8C3E00152060 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347FDAB22AF8C3E00152060 /* UICollectionViewCell.swift */; };
+		D347FDAE22AF8D4700152060 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347FDAD22AF8D4700152060 /* MyCell.swift */; };
+		D347FDB022AFA3C800152060 /* Deposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347FDAF22AFA3C800152060 /* Deposit.swift */; };
 		D3D6362922AB921400E935D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6362822AB921400E935D2 /* AppDelegate.swift */; };
 		D3D6362B22AB921400E935D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6362A22AB921400E935D2 /* ViewController.swift */; };
 		D3D6363022AB921500E935D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D6362F22AB921500E935D2 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D347FDAB22AF8C3E00152060 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
+		D347FDAD22AF8D4700152060 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		D347FDAF22AFA3C800152060 /* Deposit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deposit.swift; sourceTree = "<group>"; };
 		D3D6362522AB921400E935D2 /* Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D6362822AB921400E935D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D6362A22AB921400E935D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 		D3D6363A22AB936800E935D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D347FDAF22AFA3C800152060 /* Deposit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -73,6 +80,8 @@
 		D3D6363B22AB937100E935D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D347FDAB22AF8C3E00152060 /* UICollectionViewCell.swift */,
+				D347FDAD22AF8D4700152060 /* MyCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3D6362B22AB921400E935D2 /* ViewController.swift in Sources */,
+				D347FDAE22AF8D4700152060 /* MyCell.swift in Sources */,
+				D347FDB022AFA3C800152060 /* Deposit.swift in Sources */,
+				D347FDAC22AF8C3E00152060 /* UICollectionViewCell.swift in Sources */,
 				D3D6362922AB921400E935D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Task/Controller/ViewController.swift"
-            timestampString = "581861591.949244"
+            timestampString = "581939717.052767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "stylized()"
             landmarkType = "7">
          </BreakpointContent>
