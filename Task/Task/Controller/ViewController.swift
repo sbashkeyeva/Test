@@ -74,12 +74,12 @@ class VC: UIViewController {
         
         let flowLayout=UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width-20, height: 190)
+        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width-20, height: 152)
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         flowLayout.minimumInteritemSpacing = 0.0
         flowLayout.minimumLineSpacing = 0.0
         collectionView.collectionViewLayout=flowLayout
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .red
         collectionView.isPagingEnabled = true
         tableView.rowHeight = 150
         tableView.estimatedRowHeight = 80
