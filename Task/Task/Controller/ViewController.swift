@@ -18,9 +18,9 @@ class VC: UIViewController {
     ["Bil Gates","Steve Jobs","Mark Zucherberg","Test","Zhizn'","klass"]
     let cellIdentifier="cellIdentifier"
     let bullet="bullet"
+    let stackCell="stackCell"
     let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-    
     let tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
     
     override func viewDidLoad() {
@@ -35,7 +35,8 @@ class VC: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(Bullet.self, forCellWithReuseIdentifier: bullet)
+//        collectionView.register(Bullet.self, forCellWithReuseIdentifier: bullet)
+        collectionView.register(StackCollectionViewCell.self, forCellWithReuseIdentifier: stackCell)
     }
     
     func addSubviews() {
@@ -81,6 +82,7 @@ class VC: UIViewController {
         collectionView.collectionViewLayout=flowLayout
         collectionView.backgroundColor = .red
         collectionView.isPagingEnabled = true
+//        tableView.rowHeight = UITableView.automaticDimension
         tableView.rowHeight = 150
         tableView.estimatedRowHeight = 80
     }
@@ -110,9 +112,9 @@ extension VC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bullet, for: indexPath) as! Bullet
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bullet, for: indexPath) as! Bullet
 //        cell.textLabel.text = names[indexPath.row]
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: stackCell, for: indexPath) as! StackCollectionViewCell
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout

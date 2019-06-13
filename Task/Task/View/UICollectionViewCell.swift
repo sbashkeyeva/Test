@@ -8,16 +8,17 @@
 
 import UIKit
 
+
 class Bullet:UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     let textLabel:UILabel={
         let label=UILabel()
         label.font=UIFont.systemFont(ofSize: 17)
@@ -66,14 +67,14 @@ class Bullet:UICollectionViewCell{
             textLabel.topAnchor.constraint(equalTo: topAnchor, constant:75),
             actualLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             actualLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            dateLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            dateLabel.rightAnchor.constraint(equalTo: currencyLabel.rightAnchor),
             dateLabel.topAnchor.constraint(equalTo: topAnchor, constant:20),
             currencyLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
             currencyLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             typeCurrencyLabel.topAnchor.constraint(equalTo: topAnchor, constant:20),
             typeCurrencyLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
         ]
-        
+
         NSLayoutConstraint.activate(constraints)
         backgroundColor = .white
     }

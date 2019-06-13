@@ -68,6 +68,7 @@ class MyCell: UITableViewCell {
             namelabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             namelabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 20),
             namelabel.topAnchor.constraint(equalTo: topAnchor, constant: 35),
+//            namelabel.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 35),
             namelabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20),
             messageLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             messageLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 20),
