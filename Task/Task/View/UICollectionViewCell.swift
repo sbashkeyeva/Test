@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-class Bullet:UICollectionViewCell{
+class Bullet:UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -19,13 +18,13 @@ class Bullet:UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
 
-    let textLabel:UILabel={
+    let textLabel:UILabel = {
         let label=UILabel()
         label.font=UIFont.systemFont(ofSize: 17)
         label.text="000007654"
         return label
     }()
-    let actualLabel:UILabel={
+    let actualLabel:UILabel = {
         let label=UILabel()
         label.text="Актуален"
         label.textColor = .green
@@ -38,19 +37,19 @@ class Bullet:UICollectionViewCell{
         label.font=UIFont.systemFont(ofSize: 13)
         return label
     }()
-    let currencyLabel:UILabel={
+    let currencyLabel:UILabel = {
         let label=UILabel()
         label.text="8 100.54 $"
         label.font=UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
-    let typeCurrencyLabel:UILabel={
+    let typeCurrencyLabel:UILabel = {
         let label=UILabel()
         label.text="USD"
         label.font=UIFont.systemFont(ofSize: 17)
         return label
     }()
-    func setupViews(){
+    func setupViews() {
         addSubview(textLabel)
         addSubview(actualLabel)
         addSubview(dateLabel)

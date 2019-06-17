@@ -19,7 +19,6 @@ class StackCollectionViewCell: UICollectionViewCell {
         addSubviews()
         setupConstraints()
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,7 +27,7 @@ class StackCollectionViewCell: UICollectionViewCell {
     let typeCurrencyLabel = UILabel()
     let actualLabel=UILabel()
     let currencyLabel=UILabel()
-    func setupConstraints(){
+    func setupConstraints() {
         mainStackView.translatesAutoresizingMaskIntoConstraints=false
         firstStackView.translatesAutoresizingMaskIntoConstraints = false
         secondStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,18 +43,21 @@ class StackCollectionViewCell: UICollectionViewCell {
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainStackView.topAnchor.constraint(equalTo: topAnchor),
             mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            mainStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            mainStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
             firstStackView.heightAnchor.constraint(equalToConstant: 30),
             secondStackView.heightAnchor.constraint(equalToConstant: 30),
-            thirdStackView.heightAnchor.constraint(equalToConstant: 30),
-            
+            thirdStackView.heightAnchor.constraint(equalToConstant: 30)
         ]
         NSLayoutConstraint.activate(constraints)
     }
-    func stylized(){
+    func stylized () {
         dateLabel.text = "12.12.2022"
+        dateLabel.textAlignment = .right
         typeCurrencyLabel.text = "USD"
         numberLabel.text = "00002345"
         currencyLabel.text = "8 100.54 $"
+        currencyLabel.textAlignment = .right
         actualLabel.text = "Актуален"
         mainStackView.axis = .vertical
         mainStackView.alignment = .fill
@@ -70,8 +72,9 @@ class StackCollectionViewCell: UICollectionViewCell {
         thirdStackView.axis = .horizontal
         thirdStackView.distribution = .fillEqually
         thirdStackView.alignment = .fill
+        backgroundColor = .white
     }
-    func addSubviews(){
+    func addSubviews() {
         firstStackView.addArrangedSubview(typeCurrencyLabel)
         firstStackView.addArrangedSubview(dateLabel)
         secondStackView.addArrangedSubview(numberLabel)
@@ -81,6 +84,5 @@ class StackCollectionViewCell: UICollectionViewCell {
         mainStackView.addArrangedSubview(secondStackView)
         mainStackView.addArrangedSubview(thirdStackView)
         contentView.addSubview(mainStackView)
-        
     }
 }
